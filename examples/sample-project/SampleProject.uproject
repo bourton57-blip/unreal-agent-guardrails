@@ -1,0 +1,13 @@
+{
+    "FileVersion": 3,
+    "EngineAssociation": "5.7",
+    "Category": "Samples",
+    "Description": "Synthetic sample project for unreal-agent-guardrails. Contains no proprietary content and is not a playable game.",
+    "Modules": [
+        {
+            "Name": "SampleProject",
+            "Type": "Runtime",
+            "LoadingPhase": "Default"
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+﻿# Keep binary fixtures byte-identical across platforms.
+# Without this, autocrlf would rewrite line endings and change the SHA-256,
+# which is exactly the kind of drift the integrity checker exists to detect.
+*.bin -text
+

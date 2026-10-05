@@ -1,0 +1,21 @@
+﻿{
+    "documents":  [
+                      {
+                          "topic":  "mixed-topic",
+                          "version":  "1.0.0",
+                          "approvedOn":  "2026-01-10",
+                          "path":  "specs/ok.md",
+                          "approvedBy":  "r",
+                          "status":  "APPROVED"
+                      },
+                      {
+                          "topic":  "mixed-topic",
+                          "version":  "0.1.0",
+                          "approvedOn":  null,
+                          "path":  "incoming/draft.md",
+                          "approvedBy":  null,
+                          "status":  "INCOMING"
+                      }
+                  ],
+    "schemaVersion":  1
+}

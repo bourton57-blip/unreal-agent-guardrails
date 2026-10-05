@@ -1,0 +1,15 @@
+﻿{
+    "components":  [
+                       {
+                           "id":  "example-tool",
+                           "version":  "1.0.0",
+                           "required":  true,
+                           "path":  "example-tool.bin",
+                           "sha256":  "0000000000000000000000000000000000000000000000000000000000000000",
+                           "kind":  "file",
+                           "license":  "Apache-2.0"
+                       }
+                   ],
+    "schemaVersion":  1,
+    "name":  "fixture-toolchain"
+}

@@ -1,0 +1,14 @@
+﻿{
+    "components":  [
+                       {
+                           "id":  "absent-tool",
+                           "required":  true,
+                           "path":  "does-not-exist.bin",
+                           "sha256":  "8BF790DEC3144B553C6B4F9EF3B0B46F2558F812A2012898058DBAC0D101D414",
+                           "kind":  "file",
+                           "license":  "MIT"
+                       }
+                   ],
+    "schemaVersion":  1,
+    "name":  "fixture-toolchain"
+}

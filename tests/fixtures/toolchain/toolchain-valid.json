@@ -1,0 +1,20 @@
+{
+    "components":  [
+                       {
+                           "source":  "synthetic-fixture",
+                           "id":  "example-tool",
+                           "kind":  "file",
+                           "version":  "1.0.0",
+                           "license":  "Apache-2.0",
+                           "licenseUrl":  "https://www.apache.org/licenses/LICENSE-2.0",
+                           "revision":  "abc1234",
+                           "path":  "example-tool.bin",
+                           "sha256":  "8BF790DEC3144B553C6B4F9EF3B0B46F2558F812A2012898058DBAC0D101D414",
+                           "required":  true
+                       }
+                   ],
+    "generatedAt":  "2026-01-01T00:00:00Z",
+    "schemaVersion":  1,
+    "name":  "fixture-toolchain",
+    "generatedBy":  "unreal-agent-guardrails"
+}

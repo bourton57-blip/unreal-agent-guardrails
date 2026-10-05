@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/bourton57-blip/unreal-agent-guardrails/blob/main/schemas/governance-index.schema.json",
+  "title": "unreal-agent-guardrails governance index",
+  "description": "Declares which document is authoritative for each topic.",
+  "type": "object",
+  "required": ["schemaVersion", "documents"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "type": "integer", "const": 1 },
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["topic", "status", "path"],
+        "additionalProperties": false,
+        "properties": {
+          "topic": { "type": "string", "minLength": 1 },
+          "status": {
+            "type": "string",
+            "enum": ["INCOMING", "APPROVED", "SUPERSEDED", "ARCHIVED"]
+          },
+          "path": { "type": "string", "minLength": 1 },
+          "version": { "type": ["string", "null"] },
+          "approvedOn": { "type": ["string", "null"] },
+          "approvedBy": { "type": ["string", "null"] }
+        }
+      }
+    }
+  }
+}

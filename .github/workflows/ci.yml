@@ -1,0 +1,71 @@
+﻿name: ci
+
+# v0.1 supports and claims Windows only. macOS and Linux are not claimed, not
+# tested, and are documented as limitations in the README. A matrix is listed
+# in the roadmap rather than implied here.
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test (windows-latest, Windows PowerShell 5.1)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show environment
+        shell: pwsh
+        run: |
+          Write-Host "pwsh: $($PSVersionTable.PSVersion)"
+          Write-Host "OS : $([System.Environment]::OSVersion.VersionString)"
+
+      - name: Parse-check every script
+        shell: pwsh
+        run: |
+          $failed = $false
+          Get-ChildItem -Recurse -Filter *.ps1 | ForEach-Object {
+            $errors = $null
+            $null = [System.Management.Automation.Language.Parser]::ParseFile(
+              $_.FullName, [ref]$null, [ref]$errors)
+            if ($errors) {
+              $failed = $true
+              Write-Host "SYNTAX ERROR: $($_.Name) line $($errors[0].Extent.StartLineNumber): $($errors[0].Message)"
+            }
+          }
+          if ($failed) { exit 1 }
+          Write-Host "All scripts parse cleanly."
+
+      - name: Run test suite
+        shell: cmd
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File .\tests\Invoke-Tests.ps1
+
+      - name: Leak scan
+        shell: cmd
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File .\tests\Invoke-LeakScan.ps1
+
+      - name: CLI smoke test
+        shell: cmd
+        run: |
+          powershell -NoProfile -ExecutionPolicy Bypass -File .\uat.ps1 version
+          powershell -NoProfile -ExecutionPolicy Bypass -File .\uat.ps1 doctor .\examples\sample-project
+          if errorlevel 1 exit /b 1
+          powershell -NoProfile -ExecutionPolicy Bypass -File .\uat.ps1 authority -IndexPath .\examples\example.governance.json -Topic input-mapping
+          if errorlevel 1 exit /b 1
+
+      - name: CLI rejects an unapproved topic (expected failure)
+        shell: cmd
+        run: |
+          powershell -NoProfile -ExecutionPolicy Bypass -File .\uat.ps1 authority -IndexPath .\examples\example.governance.json -Topic camera-tuning >nul 2>&1
+          if errorlevel 1 (
+            echo "Correctly refused: INCOMING topic returned a non-zero exit code."
+            exit /b 0
+          )
+          echo "ERROR: an INCOMING topic was accepted as authoritative."
+          exit /b 1

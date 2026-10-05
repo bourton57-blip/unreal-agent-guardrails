@@ -1,0 +1,24 @@
+﻿# Build output
+[Bb]in/
+[Oo]bj/
+*.dll
+*.exe
+
+# Tooling
+.vs/
+.vscode/
+.idea/
+*.user
+
+# Local run output
+*.log
+doctor.json
+report.md
+toolchain.json
+!tests/fixtures/toolchain/*.json
+!examples/*.json
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini

@@ -1,0 +1,9 @@
+﻿{
+    "mcpServers": {
+        "example-inspector": {
+            "command": "example-inspector-server",
+            "args": ["--stdio"],
+            "env": {}
+        }
+    }
+}

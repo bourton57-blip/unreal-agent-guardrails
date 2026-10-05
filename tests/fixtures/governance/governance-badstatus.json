@@ -1,0 +1,10 @@
+﻿{
+    "documents":  [
+                      {
+                          "status":  "PROBABLY_FINE",
+                          "path":  "x.md",
+                          "topic":  "weird"
+                      }
+                  ],
+    "schemaVersion":  1
+}

@@ -1,0 +1,13 @@
+{
+    "FileVersion": 3,
+    "EngineAssociation": "5.7",
+    "Category": "Samples",
+    "Description": "Synthetic fixture project used by unreal-agent-guardrails tests. Contains no proprietary content.",
+    "Modules": [
+        {
+            "Name": "FixtureSample",
+            "Type": "Runtime",
+            "LoadingPhase": "Default"
+        }
+    ]
+}

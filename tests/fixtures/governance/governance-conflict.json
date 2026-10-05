@@ -1,0 +1,21 @@
+﻿{
+    "documents":  [
+                      {
+                          "topic":  "shared-topic",
+                          "version":  "1.0.0",
+                          "approvedOn":  "2026-01-10",
+                          "path":  "specs/a.md",
+                          "approvedBy":  "reviewer-a",
+                          "status":  "APPROVED"
+                      },
+                      {
+                          "topic":  "shared-topic",
+                          "version":  "1.1.0",
+                          "approvedOn":  "2026-02-02",
+                          "path":  "specs/b.md",
+                          "approvedBy":  "reviewer-b",
+                          "status":  "APPROVED"
+                      }
+                  ],
+    "schemaVersion":  1
+}

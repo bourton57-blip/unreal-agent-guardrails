@@ -1,0 +1,13 @@
+﻿{
+    "components":  [
+                       {
+                           "path":  "example-tool.bin",
+                           "sha256":  "8BF790DEC3144B553C6B4F9EF3B0B46F2558F812A2012898058DBAC0D101D414",
+                           "id":  "no-license-tool",
+                           "required":  true,
+                           "kind":  "file"
+                       }
+                   ],
+    "schemaVersion":  1,
+    "name":  "fixture-toolchain"
+}

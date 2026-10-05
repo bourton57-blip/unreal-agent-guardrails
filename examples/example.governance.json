@@ -1,0 +1,29 @@
+﻿{
+    "documents":  [
+                      {
+                          "topic":  "input-mapping",
+                          "version":  "1.0.0",
+                          "approvedOn":  "2026-01-10",
+                          "path":  "specs/input-mapping.md",
+                          "approvedBy":  "human-reviewer",
+                          "status":  "APPROVED"
+                      },
+                      {
+                          "topic":  "camera-tuning",
+                          "version":  "0.1.0",
+                          "approvedOn":  null,
+                          "path":  "incoming/camera-tuning.md",
+                          "approvedBy":  null,
+                          "status":  "INCOMING"
+                      },
+                      {
+                          "topic":  "old-notes",
+                          "version":  "0.2.0",
+                          "approvedOn":  null,
+                          "path":  "archive/old-notes.md",
+                          "approvedBy":  null,
+                          "status":  "ARCHIVED"
+                      }
+                  ],
+    "schemaVersion":  1
+}
